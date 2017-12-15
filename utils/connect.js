@@ -3,14 +3,15 @@ let __Store = getApp().Store
 let mapStateToData
 let baseObj = {
   __observer: null,
-  onLoad() {},
-  onUnload() {},
-  onShow() {},
-  onHide() {}
+  onLoad() { },
+  onUnload() { },
+  onShow() { },
+  onHide() { }
 }
 let config = {
   __Store,
   __dispatch: __Store.dispatch,
+  __destroy: null,
   __observer() {
     if (super.__observer) {
       super.__observer()
@@ -19,13 +20,11 @@ let config = {
     const state = __Store.getState()
     const newData = mapStateToData(state)
     const oldData = mapStateToData(this.data || {})
-    if (shallowEqual( oldData , newData)) {
+    if (shallowEqual(oldData, newData)) {
       return
     }
-    console.log(" Test setData ")
     this.setData(newData)
   },
-  __destroy: null,
   onLoad() {
     super.onLoad()
     this.__destroy = this.__Store.subscribe(this.__observer)
@@ -36,11 +35,11 @@ let config = {
     this.__destroy && this.__destroy() & delete this.__destroy
   },
   onShow() {
+    super.onShow()
     if (!this.__destroy) {
       this.__destroy = this.__Store.subscribe(this.__observer)
       this.__observer()
     }
-    super.onShow()
   },
   onHide() {
     super.onHide()
@@ -48,7 +47,7 @@ let config = {
   }
 }
 
-export default (mapState = ()=> {}) => {
+export default (mapState = () => { }) => {
   mapStateToData = mapState
   return (options = {}) => {
     let opts = Object.assign({}, baseObj, options)
