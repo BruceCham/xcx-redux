@@ -1,0 +1,4 @@
+/**index.wxss**/
+.btnpadding{
+  margin-bottom: 40rpx;
+}

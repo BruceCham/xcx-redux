@@ -1,0 +1,5 @@
+<view class="container">
+  <button class="btnpadding" type="primary" bindtap="redirectToLog">跳转日志页面</button>
+  <button type="primary" bindtap="bindBtn">{{innerText}}</button>
+  <component-footer rest="{{counter.rest}}" count="{{counter.count}}"></component-footer>
+</view>

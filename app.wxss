@@ -1,0 +1,6 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  padding: 200rpx 40rpx;
+  box-sizing: border-box;
+} 

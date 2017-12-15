@@ -1,0 +1,3 @@
+<view class="container">
+  <button type="primary" bindtap="dispatchCount">日志页面点击+1</button>
+</view>

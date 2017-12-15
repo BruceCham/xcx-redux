@@ -1,0 +1,5 @@
+<view class="count-wraper">
+  <label>我是组件</label>
+  <progress percent="{{count*10}}" show-info />
+  <button type="warn" bind:tap="changeCountToZero">重置点赞</button>
+</view>

@@ -1,0 +1,7 @@
+<!--components/footer/footer.wxml-->
+<view>
+  <component-count count="{{count}}"></component-count>
+  <view>
+    <text>重置次数{{rest}}</text>
+  </view>
+</view>
