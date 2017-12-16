@@ -14,9 +14,12 @@ Page(connect(mapStateToProps)({
     })
   },
   redirectToLog() {
-    wx.redirectTo({
+    wx.navigateTo({
       url: "../logs/logs"
     })
+    // wx.redirectTo({
+    //   url: "../logs/logs"
+    // })
   },
   onLoad() {
     console.log("index onload")
