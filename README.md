@@ -47,3 +47,15 @@ Page(
 * `__dispatch`      `dispatch` 触发 `reducer`
 * `__destroy`       毁灭者，取消观察
 * `__observer`      观察者，`state` 变化时候回调
+
+<br/>
+
+不需要 `state`，但需要用到 `dispatch`的视图中，可以直接通过实例app或引入reducers方式获取
+
+```js
+import Store from '../../reducers/index'
+const dispatch = Store.dispatch
+
+const {Store} = getApp()
+const dispatch = Store.dispatch
+```

@@ -40,15 +40,14 @@ export default (mapStateToData = () => {}) => {
     }
   }
   return (options = {}) => {
-    let baseObj = {
+    Object.setPrototypeOf(config, {
       __observer: null,
-      onLoad() {},
-      onUnload() {},
-      onShow() {},
-      onHide() {}
-    }
-    let opts = Object.assign({}, baseObj, options)
-    Object.setPrototypeOf(config, opts)
+      onLoad() { },
+      onUnload() { },
+      onShow() { },
+      onHide() { },
+      ...options
+    })
     return config
   }
 }
